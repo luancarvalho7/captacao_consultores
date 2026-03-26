@@ -102,75 +102,63 @@ function TopBar() {
 function Hero() {
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden pt-12"
+      className="relative min-h-screen flex items-end overflow-hidden pt-12"
       style={{ backgroundColor: "#0E0F14" }}
     >
-      {/* Background photo */}
+      {/* Background video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
-          src="/kim_video.mp4"
+          src="/ending.mp4"
           autoPlay
           muted
           loop
           playsInline
-          className="absolute right-0 object-contain object-right-top"
-          style={{ transform: "scaleX(-1)", height: "120%", top: "-10%" }}
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Left solid cover  text area, desktop */}
+        {/* Dark overlay to keep text readable */}
         <div
-          className="absolute inset-y-0 left-0 hidden md:block"
-          style={{ width: "52%", background: "#0E0F14" }}
+          className="absolute inset-0"
+          style={{ background: "rgba(14,15,20,0.72)" }}
         />
-        {/* Left edge fade  blends video left edge into background, desktop */}
+        {/* Bottom fade to black — covers headline + bottom area */}
         <div
-          className="absolute inset-y-0 hidden md:block"
-          style={{ left: "50%", width: "30%", background: "linear-gradient(to right, #0E0F14, transparent)" }}
+          className="absolute bottom-0 left-0 right-0"
+          style={{ height: "70%", background: "linear-gradient(to top, #0E0F14 45%, transparent)" }}
         />
-        {/* Mobile overlay */}
-        <div
-          className="absolute inset-0 md:hidden"
-          style={{ background: "linear-gradient(to bottom, #0E0F14bb 0%, #0E0F14ee 55%, #0E0F14 100%)" }}
-        />
-        {/* Top fade  aligns with video top edge */}
+        {/* Top fade */}
         <div
           className="absolute top-0 left-0 right-0 h-24"
           style={{ background: "linear-gradient(to bottom, #0E0F14, transparent)" }}
         />
-        {/* Bottom fade  aligns with video bottom edge */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-32"
-          style={{ background: "linear-gradient(to top, #0E0F14, transparent)" }}
-        />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-16 md:py-24">
-        <div className="max-w-[580px]">
-          {/* Logo wordmark */}
-          <div className="mb-7">
-            <img
-              src="https://www.atomconsultoriafinanceira.com.br/atom_logo.webp"
-              alt="ATOM Logo"
-              className="h-14 mb-2"
-            />
-          </div>
-
-          {/* Badge */}
-          <div className="hidden md:inline-flex items-center border border-white/20 bg-white/5 text-white/55 text-[11px] tracking-[0.18em] uppercase font-sans px-4 py-1.5 rounded-full mb-7">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-12 pb-16 md:pb-24">
+        {/* Logo + Badge row */}
+        <div className="flex items-center gap-5 mb-8">
+          <img
+            src="https://www.atomconsultoriafinanceira.com.br/atom_logo.webp"
+            alt="ATOM Logo"
+            className="h-12"
+          />
+          <div className="hidden md:inline-flex items-center border border-white/20 bg-white/5 text-white/55 text-[11px] tracking-[0.18em] uppercase font-sans px-4 py-1.5 rounded-full">
             Formação de Consultores Financeiros
           </div>
+        </div>
 
-          {/* Headline  Playfair Display 400 */}
-          <h1 className="font-serif font-normal text-[2.4rem] sm:text-[3.2rem] md:text-[3.8rem] leading-[1.07] text-balance mb-5 text-white">
-            Ajude pessoas a transformarem a relação com o dinheiro{" "}
-            <span className="italic" style={{ color: "#A48B6D" }}>
-              e construa uma carreira sólida
-            </span>{" "}
-            fazendo isso.
-          </h1>
+        {/* Full-width Headline */}
+        <h1 className="font-serif font-normal text-[2.6rem] sm:text-[3.4rem] md:text-[4.2rem] lg:text-[5rem] leading-[1.05] text-white w-full mb-10">
+          Ajude pessoas a transformarem a relação com o dinheiro{" "}
+          <span className="italic" style={{ color: "#A48B6D" }}>
+            e construa uma carreira sólida
+          </span>{" "}
+          fazendo isso.
+        </h1>
 
+        {/* Bottom row: subtitle left, CTAs right */}
+        <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
           {/* Subtitle */}
-          <p className="font-sans text-sm sm:text-base text-white/55 leading-relaxed mb-8 max-w-[480px]">
+          <p className="font-sans text-sm sm:text-base text-white/55 leading-relaxed flex-1 max-w-xl">
             A ATOM forma e certifica consultores financeiros com metodologia própria,
             remuneração competitiva e plano de carreira estruturado.{" "}
             <strong className="text-white/75 font-semibold">
@@ -178,27 +166,27 @@ function Hero() {
             </strong>
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 mb-5">
-            <button
-              onClick={() => scrollTo("candidatura")}
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#0E0F14] font-sans font-black text-[12px] tracking-[0.18em] uppercase px-7 py-3.5 rounded-full hover:bg-white/90 transition-opacity duration-200"
-            >
-              Quero me candidatar
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => scrollTo("jornada")}
-              className="inline-flex items-center justify-center gap-2 border border-white/25 text-white/65 font-sans font-semibold text-[12px] tracking-[0.18em] uppercase px-7 py-3.5 rounded-full hover:border-white/50 hover:text-white transition-colors duration-200"
-            >
-              Entender como funciona
-            </button>
+          {/* CTAs + Urgency */}
+          <div className="flex flex-col gap-3 md:shrink-0">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => scrollTo("candidatura")}
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#0E0F14] font-sans font-black text-[12px] tracking-[0.18em] uppercase px-7 py-3.5 rounded-full hover:bg-white/90 transition-opacity duration-200"
+              >
+                Quero me candidatar
+                <ArrowRight className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => scrollTo("jornada")}
+                className="inline-flex items-center justify-center gap-2 border border-white/25 text-white/65 font-sans font-semibold text-[12px] tracking-[0.18em] uppercase px-7 py-3.5 rounded-full hover:border-white/50 hover:text-white transition-colors duration-200"
+              >
+                Entender como funciona
+              </button>
+            </div>
+            <p className="font-sans text-sm text-white/40">
+              Vagas extremamente limitadas. Candidaturas encerram em breve.
+            </p>
           </div>
-
-          {/* Urgency */}
-          <p className="font-sans text-sm text-white/40">
-            Vagas extremamente limitadas. Candidaturas encerram em breve.
-          </p>
         </div>
       </div>
     </section>
