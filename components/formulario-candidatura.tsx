@@ -11,9 +11,28 @@ const situacoes = [
   "Outro",
 ]
 
+function formatPhone(value: string): string {
+  const digits = value.replace(/\D/g, "").slice(0, 11)
+  if (digits.length <= 2) return digits.length ? `(${digits}` : ""
+  if (digits.length <= 6) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`
+  if (digits.length <= 10) return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`
+}
+
+function validatePhone(value: string): boolean {
+  const digits = value.replace(/\D/g, "")
+  return digits.length === 10 || digits.length === 11
+}
+
+function validateEmail(value: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+}
+
 export function FormularioCandidatura() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [submitError, setSubmitError] = useState("")
+  const [errors, setErrors] = useState({ email: "", whatsapp: "" })
   const [form, setForm] = useState({
     nome: "",
     email: "",
@@ -24,15 +43,48 @@ export function FormularioCandidatura() {
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
+    const { name, value } = e.target
+    if (name === "whatsapp") {
+      setForm({ ...form, whatsapp: formatPhone(value) })
+      if (errors.whatsapp) setErrors((prev) => ({ ...prev, whatsapp: "" }))
+    } else {
+      setForm({ ...form, [name]: value })
+      if (name === "email" && errors.email) setErrors((prev) => ({ ...prev, email: "" }))
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setSubmitError("")
+
+    const emailValid = validateEmail(form.email)
+    const phoneValid = validatePhone(form.whatsapp)
+
+    if (!emailValid || !phoneValid) {
+      setErrors({
+        email: emailValid ? "" : "Digite um e-mail válido.",
+        whatsapp: phoneValid ? "" : "Digite um número de WhatsApp brasileiro válido.",
+      })
+      return
+    }
+
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 1500))
-    setLoading(false)
-    setSubmitted(true)
+    try {
+      const res = await fetch(
+        "https://n8nsemfila.iatom.site/webhook/consultoria/capcatcaoconsultores/apply",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        }
+      )
+      if (!res.ok) throw new Error("Erro no envio")
+      setSubmitted(true)
+    } catch {
+      setSubmitError("Ocorreu um erro ao enviar sua candidatura. Tente novamente.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputClass =
@@ -95,8 +147,11 @@ export function FormularioCandidatura() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="seuemail@email.com"
-                  className={inputClass}
+                  className={`${inputClass} ${errors.email ? "border-red-500 focus:border-red-500 focus:ring-red-500/30" : ""}`}
                 />
+                {errors.email && (
+                  <span className="text-xs text-red-500 mt-0.5">{errors.email}</span>
+                )}
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-bold tracking-widest uppercase text-muted-foreground">
@@ -109,8 +164,11 @@ export function FormularioCandidatura() {
                   value={form.whatsapp}
                   onChange={handleChange}
                   placeholder="(11) 99999-0000"
-                  className={inputClass}
+                  className={`${inputClass} ${errors.whatsapp ? "border-red-500 focus:border-red-500 focus:ring-red-500/30" : ""}`}
                 />
+                {errors.whatsapp && (
+                  <span className="text-xs text-red-500 mt-0.5">{errors.whatsapp}</span>
+                )}
               </div>
             </div>
 
@@ -169,6 +227,9 @@ export function FormularioCandidatura() {
             </div>
 
             {/* Submit */}
+            {submitError && (
+              <p className="text-center text-xs text-red-500">{submitError}</p>
+            )}
             <button
               type="submit"
               disabled={loading}

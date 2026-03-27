@@ -7,25 +7,12 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: 'ATOM | Formação Especialista Financeiro',
+  title: 'Seleção de Consultores ATOM',
   description: 'A ATOM forma e certifica futuros consultores financeiros com metodologia própria, remuneração competitiva e plano de carreira estruturado.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: 'https://www.atomconsultoriafinanceira.com.br/atom_logo.webp',
+    apple: 'https://www.atomconsultoriafinanceira.com.br/atom_logo.webp',
   },
 }
 
