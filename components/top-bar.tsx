@@ -9,7 +9,7 @@ export function TopBar() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-[oklch(0.07_0_0)] border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
+      <div className="w-full px-4 py-2.5 flex items-center justify-between gap-3">
         {/* Left: notices */}
         <div className="flex flex-col gap-0.5 min-w-0">
           <div className="flex items-center gap-2 text-xs text-foreground/90 truncate">

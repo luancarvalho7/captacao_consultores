@@ -150,7 +150,7 @@ function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-12 pb-16 md:pb-24 flex flex-col items-center text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-12 pb-16 md:pb-24 flex flex-col items-start text-left">
         {/* Logo + Badge row */}
         <div className="flex items-center gap-5 mb-8">
           <img
