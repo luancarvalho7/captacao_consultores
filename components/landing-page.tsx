@@ -20,8 +20,8 @@ const heroChips = [
 const paraQuemCards = [
   {
     icon: Briefcase,
-    title: "Você quer uma renda extra real",
-    description: "Trabalha, mas sente que seu tempo livre poderia gerar mais. Quer uma atividade paralela que pague bem e faça sentido  não apenas mais uma renda extra qualquer.",
+    title: "Você quer uma renda extra",
+    description: "Já possui uma carreira, mas quer aumentar seus ganhos financeiros e trabalhar com um mercado lucrativo.",
   },
   {
     icon: TrendingUp,
@@ -49,7 +49,7 @@ const remuneracaoPoints = [
 
 const formacaoSteps = [
   { icon: Brain, number: "01", title: "Mentalidade e postura profissional", description: "Como se apresentar, criar vínculo e conduzir conversas sobre dinheiro com empatia e autoridade." },
-  { icon: LineChart, number: "02", title: "Análise financeira na prática", description: "Fluxo de caixa, patrimônio, dívidas e investimentos  tudo que você precisa saber para entregar um diagnóstico real." },
+  { icon: LineChart, number: "02", title: "Análise financeira na prática", description: "Fluxo de caixa, patrimônio, dívidas e investimentos. Tudo que você precisa saber para entregar um diagnóstico profissional." },
   { icon: ClipboardList, number: "03", title: "Metodologia de atendimento", description: "O processo ATOM do início ao fim. Você aprende fazendo, com casos práticos supervisionados." },
   { icon: Network, number: "04", title: "Captação e construção de carteira", description: "Como transformar sua rede em clientes reais, sem abordagem forçada ou script engessado." },
 ]
@@ -165,12 +165,7 @@ function Hero() {
 
         {/* Full-width Headline */}
         <h1 className="font-serif font-normal text-[2.6rem] sm:text-[3.4rem] md:text-[4.2rem] lg:text-[5rem] leading-[1.05] text-white w-full mb-10">
-          Ajude pessoas a transformarem a relação com o dinheiro{" "}
-          <span className="italic" style={{ color: "#A48B6D" }}>
-            e construa uma carreira sólida
-          </span>{" "}
-          fazendo isso.
-        </h1>
+          Seja um <span className="italic" style={{ color: "#A48B6D" }}> consultor financeiro ATOM  </span> e construa uma carreira sólida. </h1>
 
         {/* Bottom row: subtitle left, CTAs right */}
         <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
@@ -267,8 +262,7 @@ function OQueVaiFazer() {
           <div>
             <p className="text-xs tracking-[0.3em] bg-gradient-to-r from-[#75A4C3] to-[#5170AC] bg-clip-text text-transparent uppercase font-bold mb-3">O que você vai fazer</p>
             <h2 className="font-serif font-normal text-4xl md:text-5xl text-foreground text-balance leading-tight mb-5">
-              Você constrói.{" "}
-              <span className="italic" style={{ color: "#A48B6D" }}>A ATOM estrutura.</span>
+              <span className="italic" style={{ color: "#A48B6D" }}>Empreenda</span> sem criar uma empresa {" "} do zero
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-3 text-base">
               Como Consultor ATOM, você constrói sua carteira de clientes e conduz todo o processo de consultoria
@@ -323,8 +317,7 @@ function Remuneracao() {
             <span className="italic" style={{ color: "#A48B6D" }}>carreira com futuro</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto leading-relaxed text-base">
-            A ATOM oferece um modelo de remuneração variável baseado na sua carteira de clientes  sem teto de ganhos.
-            Os detalhes completos são apresentados na etapa de seleção.
+            A ATOM oferece um modelo de remuneração variável baseado na sua carteira de clientes sem teto de ganhos.
           </p>
         </div>
         <div className="rounded-[24px] overflow-hidden border border-border mb-8">

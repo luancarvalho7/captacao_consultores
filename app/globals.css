@@ -4,7 +4,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Atom - dark premium theme with lighter grays */
   --background: #1A1B21;                   /* lighter navy-gray */
   --foreground: oklch(0.97 0 0);           /* off-white */
   --card: #22232A;                         /* lighter card */

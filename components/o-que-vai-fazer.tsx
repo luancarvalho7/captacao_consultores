@@ -37,9 +37,7 @@ export function OQueVaiFazer() {
               <span className="font-serif italic text-foreground/60">A ATOM estrutura.</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-3 text-sm">
-              Como Consultor ATOM, você constrói sua carteira de clientes e conduz todo o processo de consultoria
-              com a metodologia da empresa. A ATOM entra com a formação completa, o processo estruturado e a
-              estrutura para você atender com profissionalismo e entregar resultado real.
+              Como consultor, você constrói sua carteira de clientes e realiza as consultorias. A ATOM entra com a formação completa e toda a estrutura para você atender clientes reais e alcançar resultados lucrativos.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8 text-sm">
               É o modelo ideal para quem quer{" "}

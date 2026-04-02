@@ -13,7 +13,7 @@ const steps = [
     number: "02",
     title: "Análise financeira na prática",
     description:
-      "Fluxo de caixa, patrimônio, dívidas e investimentos  tudo que você precisa saber para entregar um diagnóstico real.",
+      "Fluxo de caixa, patrimônio, dívidas e investimentos. Tudo que você precisa saber para entregar um diagnóstico profissional.",
   },
   {
     icon: ClipboardList,
@@ -43,8 +43,7 @@ export function Formacao() {
             <span className="font-serif italic text-foreground/60">sozinho.</span>
           </h2>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Antes de atender seu primeiro cliente, você passa pela Formação ATOM  um treinamento completo que cobre
-            desde a mentalidade do consultor financeiro até a condução de cada etapa do atendimento.
+            Antes de atender seu primeiro cliente, você passa pela Formação ATOM, um treinamento completo que vai da mentalidade do consultor financeiro até a condução de cada etapa dos atendimentos.
           </p>
         </div>
 
