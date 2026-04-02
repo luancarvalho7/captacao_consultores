@@ -13,7 +13,7 @@ export function Footer() {
           <p className="text-xs text-muted-foreground/40 mt-1">Formação de Especialistas Financeiros</p>
         </div>
         <p className="text-xs text-muted-foreground/40">
-          &copy; {new Date().getFullYear()} ATOM. Todos os direitos reservados.
+          &copy; {new Date().getFullYear()} ATOM - Todos os direitos reservados.
         </p>
       </div>
     </footer>
