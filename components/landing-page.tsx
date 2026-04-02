@@ -119,7 +119,7 @@ function TopBar() {
 function Hero() {
   return (
     <section
-      className="relative min-h-screen flex items-end overflow-hidden pt-12"
+      className="relative min-h-screen flex items-center overflow-hidden pt-12"
       style={{ backgroundColor: "#0E0F14" }}
     >
       {/* Background video */}
@@ -150,7 +150,7 @@ function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-12 pb-16 md:pb-24">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-12 pb-16 md:pb-24 flex flex-col items-center text-center">
         {/* Logo + Badge row */}
         <div className="flex items-center gap-5 mb-8">
           <img
@@ -179,9 +179,6 @@ function Hero() {
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
-            <p className="font-sans text-sm text-white/40">
-              Vagas extremamente limitadas. Candidaturas encerram em breve.
-            </p>
           </div>
         </div>
       </div>
@@ -243,15 +240,7 @@ function OQueVaiFazer() {
             <h2 className="font-serif font-normal text-4xl md:text-5xl text-foreground text-balance leading-tight mb-5">
               <span className="italic" style={{ color: "#A48B6D" }}>Empreenda</span> sem criar uma empresa {" "} do zero
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-3 text-base">
-              Como Consultor ATOM, você constrói sua carteira de clientes e conduz todo o processo de consultoria
-              com a metodologia da empresa. A ATOM entra com a formação completa, o processo estruturado e a
-              estrutura para você atender com profissionalismo e entregar resultado real.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-8 text-sm">
-              É o modelo ideal para quem quer{" "}
-              <strong className="text-foreground/80">empreender sem abrir uma empresa do zero.</strong>
-            </p>
+     
             <button
               onClick={() => scrollTo("candidatura")}
               className="inline-flex items-center gap-2 bg-gradient-to-r from-[#75A4C3] to-[#5170AC] text-[#0E0F14] text-sm font-bold tracking-widest uppercase px-6 py-3 rounded-full hover:opacity-90 transition-opacity duration-200"
@@ -523,7 +512,6 @@ export function LandingPage() {
   return (
     <main>
       <Hero />
-      <Ticker />
       <ParaQuem />
       <OQueVaiFazer />
       <Remuneracao />
