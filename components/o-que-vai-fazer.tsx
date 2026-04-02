@@ -31,7 +31,6 @@ export function OQueVaiFazer() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left  Text */}
           <div>
-            <p className="text-xs tracking-[0.3em] bg-gradient-to-r from-[#75A4C3] to-[#5170AC] bg-clip-text text-transparent uppercase font-bold mb-3">O que você vai fazer</p>
             <h2 className="text-3xl md:text-4xl font-black text-foreground text-balance leading-tight mb-5">
               Você constrói.{" "}
               <span className="font-serif italic text-foreground/60">A ATOM estrutura.</span>

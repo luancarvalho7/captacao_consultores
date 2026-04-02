@@ -27,14 +27,10 @@ export function ParaQuem() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10 md:mb-14">
-          <p className="text-xs tracking-[0.3em] bg-gradient-to-r from-[#75A4C3] to-[#5170AC] bg-clip-text text-transparent uppercase font-bold mb-3">Perfil ideal</p>
           <h2 className="text-3xl md:text-4xl font-black text-foreground text-balance">
             Essa oportunidade é pra você{" "}
             <span className="font-serif italic text-foreground/70">se...</span>
           </h2>
-          <p className="mt-3 text-muted-foreground max-w-xl mx-auto leading-relaxed text-sm">
-            Para cada pessoa, existe um momento. A ATOM identifica potencial onde outros veem falta de experiência.
-          </p>
         </div>
 
         {/* Cards */}

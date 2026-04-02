@@ -158,9 +158,6 @@ function Hero() {
             alt="ATOM Logo"
             className="h-12"
           />
-          <div className="hidden md:inline-flex items-center border border-white/20 bg-white/5 text-white/55 text-[11px] tracking-[0.18em] uppercase font-sans px-4 py-1.5 rounded-full">
-            Formação de Consultores Financeiros
-          </div>
         </div>
 
         {/* Full-width Headline */}
@@ -170,14 +167,7 @@ function Hero() {
         {/* Bottom row: subtitle left, CTAs right */}
         <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
           {/* Subtitle */}
-          <p className="font-sans text-sm sm:text-base text-white/55 leading-relaxed flex-1 max-w-xl">
-            A ATOM forma e certifica consultores financeiros com metodologia própria,
-            remuneração competitiva e plano de carreira estruturado.{" "}
-            <strong className="text-white/75 font-semibold">
-              Experiência com pessoas é mais importante do que experiência com finanças.
-            </strong>
-          </p>
-
+        
           {/* CTAs + Urgency */}
           <div className="flex flex-col gap-3 md:shrink-0">
             <div className="flex flex-col sm:flex-row gap-3">
@@ -187,12 +177,6 @@ function Hero() {
               >
                 Quero me candidatar
                 <ArrowRight className="w-4 h-4" />
-              </button>
-              <button
-                onClick={() => scrollTo("jornada")}
-                className="inline-flex items-center justify-center gap-2 border border-white/25 text-white/65 font-sans font-semibold text-[12px] tracking-[0.18em] uppercase px-7 py-3.5 rounded-full hover:border-white/50 hover:text-white transition-colors duration-200"
-              >
-                Entender como funciona
               </button>
             </div>
             <p className="font-sans text-sm text-white/40">
@@ -226,14 +210,10 @@ function ParaQuem() {
     <section id="jornada" className="bg-white py-16 md:py-20 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-14">
-          <p className="text-xs tracking-[0.3em] bg-gradient-to-r from-[#75A4C3] to-[#5170AC] bg-clip-text text-transparent uppercase font-bold mb-3">Perfil ideal</p>
           <h2 className="font-serif font-normal text-4xl md:text-5xl text-[#1A1B21] text-balance">
             Essa oportunidade é pra você{" "}
             <span className="italic" style={{ color: "#A48B6D" }}>se...</span>
           </h2>
-          <p className="mt-4 text-[#5A5B63] max-w-xl mx-auto leading-relaxed text-base">
-            Para cada pessoa, existe um momento. A ATOM identifica potencial onde outros veem falta de experiência.
-          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {paraQuemCards.map((card) => {
@@ -260,7 +240,6 @@ function OQueVaiFazer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
-            <p className="text-xs tracking-[0.3em] bg-gradient-to-r from-[#75A4C3] to-[#5170AC] bg-clip-text text-transparent uppercase font-bold mb-3">O que você vai fazer</p>
             <h2 className="font-serif font-normal text-4xl md:text-5xl text-foreground text-balance leading-tight mb-5">
               <span className="italic" style={{ color: "#A48B6D" }}>Empreenda</span> sem criar uma empresa {" "} do zero
             </h2>
@@ -311,7 +290,6 @@ function Remuneracao() {
     <section className="bg-background py-16 md:py-20 px-4 md:px-10 border-t border-border">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-14">
-          <p className="text-xs tracking-[0.3em] bg-gradient-to-r from-[#75A4C3] to-[#5170AC] bg-clip-text text-transparent uppercase font-bold mb-3">Remuneração</p>
           <h2 className="font-serif font-normal text-4xl md:text-5xl text-foreground text-balance">
             Remuneração competitiva,{" "}
             <span className="italic" style={{ color: "#A48B6D" }}>carreira com futuro</span>
@@ -349,7 +327,6 @@ function Formacao() {
     <section className="bg-secondary py-16 md:py-20 px-4 md:px-10 border-t border-border">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10 md:mb-14 max-w-2xl">
-          <p className="text-xs tracking-[0.3em] bg-gradient-to-r from-[#75A4C3] to-[#5170AC] bg-clip-text text-transparent uppercase font-bold mb-3">Formação</p>
           <h2 className="font-serif font-normal text-4xl md:text-5xl text-foreground text-balance leading-tight mb-4">
             Você não começa{" "}
             <span className="italic" style={{ color: "#A48B6D" }}>sozinho.</span>
@@ -379,9 +356,16 @@ function Formacao() {
           })}
         </div>
         <div className="mt-8 md:mt-10 pt-7 border-t border-border text-center">
-          <p className="text-sm font-serif font-normal italic" style={{ color: "#A48B6D" }}>
-            "A formação é o seu ponto de partida. O crescimento é seu."
+          <p className="text-muted-foreground text-sm mb-5">
+            Pronto para dar o primeiro passo? As vagas são limitadas.
           </p>
+          <button
+            onClick={() => scrollTo("candidatura")}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#75A4C3] to-[#5170AC] text-[#0E0F14] text-sm font-bold tracking-widest uppercase px-6 py-3 rounded-full hover:opacity-90 transition-opacity duration-200 shadow-md hover:shadow-lg"
+          >
+            Quero me candidatar agora
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </section>
@@ -444,7 +428,6 @@ function FormularioCandidatura() {
     <section id="candidatura" className="bg-background py-16 md:py-20 px-4 md:px-10 border-t border-border">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-10 md:mb-12">
-          <p className="text-xs tracking-[0.3em] bg-gradient-to-r from-[#75A4C3] to-[#5170AC] bg-clip-text text-transparent uppercase font-bold mb-3">Candidatura</p>
           <h2 className="font-serif font-normal text-4xl md:text-5xl text-foreground text-balance leading-tight mb-4">
             Pronto para dar o{" "}
             <span className="italic" style={{ color: "#A48B6D" }}>primeiro passo?</span>
@@ -539,7 +522,6 @@ function Footer() {
 export function LandingPage() {
   return (
     <main>
-      <TopBar />
       <Hero />
       <Ticker />
       <ParaQuem />

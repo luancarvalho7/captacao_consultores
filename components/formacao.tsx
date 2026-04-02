@@ -37,7 +37,6 @@ export function Formacao() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-10 md:mb-14 max-w-2xl">
-          <p className="text-xs tracking-[0.3em] bg-gradient-to-r from-[#75A4C3] to-[#5170AC] bg-clip-text text-transparent uppercase font-bold mb-3">Formação</p>
           <h2 className="text-3xl md:text-4xl font-black text-foreground text-balance leading-tight mb-4">
             Você não começa{" "}
             <span className="font-serif italic text-foreground/60">sozinho.</span>
@@ -72,10 +71,7 @@ export function Formacao() {
         </div>
 
         {/* Closing line */}
-        <div className="mt-8 md:mt-10 pt-7 border-t border-border text-center">
-          <p className="text-sm font-semibold text-foreground/70 italic font-serif">
-            "A formação é o seu ponto de partida. O crescimento é seu."
-          </p>
+        <div className="mt-8 md:mt-10 pt-7 border-t border-border text-center">>
         </div>
       </div>
     </section>
