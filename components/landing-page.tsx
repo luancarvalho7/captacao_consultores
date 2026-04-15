@@ -56,6 +56,7 @@ const formacaoSteps = [
 
 const tickerItems = ["SELEÇÃO ABERTA", "VAGAS LIMITADAS", "FORMAÇÃO ATOM", "PLANO DE CARREIRA", "SEM TETO DE GANHOS", "METODOLOGIA PRÓPRIA"]
 const situacoes = ["Empregado CLT", "Autônomo", "Empreendedor", "Desempregado", "Outro"]
+const experiencias = ["6 meses a 1 ano", "De 1 a 3 anos", "Acima de 3 anos"]
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────────
 
@@ -366,7 +367,7 @@ function FormularioCandidatura() {
   const [loading, setLoading] = useState(false)
   const [submitError, setSubmitError] = useState("")
   const [errors, setErrors] = useState({ email: "", whatsapp: "" })
-  const [form, setForm] = useState({ nome: "", email: "", whatsapp: "", cidade: "", situacao: "", motivacao: "" })
+  const [form, setForm] = useState({ nome: "", email: "", whatsapp: "", cidade: "", situacao: "", experiencia: "", motivacao: "" })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -465,6 +466,13 @@ function FormularioCandidatura() {
                   {situacoes.map((s) => <option key={s} value={s}>{s}</option>)}
                 </select>
               </div>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <label className="text-xs font-bold tracking-widest uppercase text-muted-foreground">Tempo de experiência na área financeira</label>
+              <select name="experiencia" required value={form.experiencia} onChange={handleChange} className={`${inputClass} appearance-none cursor-pointer`}>
+                <option value="" disabled>Selecione...</option>
+                {experiencias.map((e) => <option key={e} value={e}>{e}</option>)}
+              </select>
             </div>
             <div className="flex flex-col gap-1.5">
               <label className="text-xs font-bold tracking-widest uppercase text-muted-foreground">Por que você quer se tornar consultor financeiro?</label>

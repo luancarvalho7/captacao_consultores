@@ -11,6 +11,12 @@ const situacoes = [
   "Outro",
 ]
 
+const experiencias = [
+  "6 meses a 1 ano",
+  "De 1 a 3 anos",
+  "Acima de 3 anos",
+]
+
 function formatPhone(value: string): string {
   const digits = value.replace(/\D/g, "").slice(0, 11)
   if (digits.length <= 2) return digits.length ? `(${digits}` : ""
@@ -39,6 +45,7 @@ export function FormularioCandidatura() {
     whatsapp: "",
     cidade: "",
     situacao: "",
+    experiencia: "",
     motivacao: "",
   })
 
@@ -208,6 +215,29 @@ export function FormularioCandidatura() {
                   ))}
                 </select>
               </div>
+            </div>
+
+            {/* Experiência */}
+            <div className="flex flex-col gap-1.5">
+              <label className="text-xs font-bold tracking-widest uppercase text-muted-foreground">
+                Tempo de experiência na área financeira
+              </label>
+              <select
+                name="experiencia"
+                required
+                value={form.experiencia}
+                onChange={handleChange}
+                className={`${inputClass} appearance-none cursor-pointer`}
+              >
+                <option value="" disabled>
+                  Selecione...
+                </option>
+                {experiencias.map((e) => (
+                  <option key={e} value={e}>
+                    {e}
+                  </option>
+                ))}
+              </select>
             </div>
 
             {/* Motivação */}
